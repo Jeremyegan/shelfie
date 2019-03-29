@@ -23,25 +23,25 @@ class Form extends Component {
     handleAddClick = () => {
         let product = this.state
 
-        this.props.handleAddProduct(product)
+        this.props.createProduct(product)
     }
 
     handleCancelClick = () => {
-        let product = this.state
-
-        this.props.handleClearInput(product)
+        document.getElementById('formBox').reset();
     }
-
+   
 
     render() {
         return (
-            <div className="formBox">
+            <div className="input">
             <img src={this.state.imageUrl} alt="" width="25vw" />
+            <form id="formBox">
             <input className="img" placeholder="" onChange={this.handleChange}>Image URL:</input><br />
             <input className="name" placeholder="" onChange={this.handleChange}>Product Name:</input><br />
             <input className="price" placeholder="0" onChange={this.handleChange}>Price:</input><br />
             <button className="formButton" onClick={this.handleAddClick}>Add Inventory</button>
-            <button className="formButton" onClick={this.handleCancelClick}>Add Inventory</button>
+            <button className="formButton" onClick={this.handleCancelClick}>Cancel</button>
+            </form>
             </div>
         )
     }

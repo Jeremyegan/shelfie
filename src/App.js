@@ -45,9 +45,7 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
-
-
-
+ 
 
 
   componentDidMount() {
@@ -70,7 +68,10 @@ class App extends Component {
         <Dashboard />
         <Form />
         <Product 
-        createProduct={this.state./>
+        inventory={this.state.inventory}
+        createProduct={this.createProduct}
+        deleteProduct={this.deleteProduct}
+        updateProduct={this.updateProduct}/>
       </div>
     );
   }
